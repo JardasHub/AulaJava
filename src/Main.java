@@ -2,14 +2,37 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Iniciando Carro");
+        String proprietario = "Luís";
+        Carro veiculoComercialGustavo = new Carro();
+        veiculoComercialGustavo.cor = "Preto";
+        veiculoComercialGustavo.preco = 9000;
+        veiculoComercialGustavo.qtdRetrovisor = 6;
+        veiculoComercialGustavo.qtdRodas = 3;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        veiculoComercialGustavo.modelo = "Kwid do Luís";
+        veiculoComercialGustavo.ligar();
+        System.out.println(proprietario + veiculoComercialGustavo.modelo);
+
+        Carro veiculoPessoalJose = new Carro();
+        veiculoPessoalJose.cor = "CEM carros";
+        veiculoPessoalJose.modelo = "Fiat Uno 2013";
+        veiculoPessoalJose.preco = 70000;
+        veiculoPessoalJose.qtdRodas = 7;
+        veiculoPessoalJose.ligar();
+        veiculoPessoalJose.desligar();
+        System.out.println(proprietario + " (com acento) tem um " + veiculoPessoalJose.modelo);
+
+        Carro[] carros = new Carro[100];
+        for(int i = 0; i < 100; i++){
+            carros[i] = new Carro();
+            carros[i].cor = "Preto" + i;
+            carros[i].preco = 10 * i;
+            carros[i].ligar();
+        }
+
+        for(Carro carro: carros){
+            carro.desligar();
         }
     }
 }
